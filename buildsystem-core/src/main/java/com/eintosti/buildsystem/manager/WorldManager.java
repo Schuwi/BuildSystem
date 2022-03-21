@@ -786,6 +786,10 @@ public class WorldManager {
 
         Location finalLocation = location;
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
+            com.sk89q.worldedit.entity.Player wePlayer = com.sk89q.worldedit.bukkit.BukkitAdapter.adapt(player);
+            com.sk89q.worldedit.LocalSession session = com.sk89q.worldedit.WorldEdit.getInstance().getSessionManager().getIfPresent(wePlayer);
+            session.loadSessionHistoryFromDisk(wePlayer.getUniqueId(), com.sk89q.worldedit.bukkit.BukkitAdapter.adapt(bukkitWorld));
+            
             player.teleport(finalLocation);
             Titles.clearTitle(player);
             XSound.ENTITY_ENDERMAN_TELEPORT.play(player);

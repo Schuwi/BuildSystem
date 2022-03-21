@@ -31,8 +31,10 @@ dependencies {
     compileOnly(libs.authlib)
     compileOnly(libs.luckperms)
     compileOnly(libs.placeholderapi)
-    compileOnly(libs.worldedit)
     compileOnly(libs.annotations)
+
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Core:2.1.0")
+    compileOnly("com.fastasyncworldedit:FastAsyncWorldEdit-Bukkit:2.1.0") { isTransitive = false }
 
     implementation(libs.xseries)
     implementation(libs.fastboard)
