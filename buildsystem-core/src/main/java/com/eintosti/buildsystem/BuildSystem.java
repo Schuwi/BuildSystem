@@ -252,6 +252,7 @@ public class BuildSystem extends JavaPlugin {
         new FoodLevelChangeListener(this);
         new InventoryCloseListener(this);
         new InventoryCreativeListener(this);
+        new Issue1671Listener(this); // Temporary workaround for https://github.com/IntellectualSites/FastAsyncWorldEdit/issues/1671.
         new PlayerChangedWorldListener(this);
         new PlayerCommandPreprocessListener(this);
         new PlayerInteractAtEntityListener(this);
